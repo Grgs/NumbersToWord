@@ -23,9 +23,7 @@ public class NumbersToWords implements INumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (number == 0) {
-            words += englishNumbers.numberMap.get(0D);
-        } else if (number < 20) {
+        if (englishNumbers.numberMap.containsKey(number)) {
             words += englishNumbers.numberMap.get(number);
         } else if (number < 100) {
             words += englishNumbers.numberMap.get(Math.floor(number / 10) * 10);
@@ -68,7 +66,7 @@ public class NumbersToWords implements INumbersToWords {
      */
     @Override
     public String getWords() {
-        return getWords(Double.parseDouble(numberString));
+        return getWords(Double.parseDouble(numberString.strip().replace(",", "")));
     }
 
     @Override

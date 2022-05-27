@@ -24,17 +24,21 @@ public class App {
         numbers.add("2");
         numbers.add("10");
         numbers.add("12");
+        numbers.add("40");
+        numbers.add("49");
         numbers.add("68");
+        numbers.add("+88");
         numbers.add("535");
-        numbers.add("1000");
+        numbers.add("1,000");
         numbers.add("8000");
-        numbers.add("90000");
+        numbers.add("900,00");
         numbers.add("500000");
         numbers.add("990000");
         numbers.add("1234567");
         numbers.add("12345678");
-        numbers.add("123456789");
-        numbers.add("123456789012");
+        numbers.add("234567895");
+        numbers.add("723456789012");
+        numbers.add("823456789012099");
 
         for (String number : numbers) {
             numbersToWords.setNumberString(number);
