@@ -42,10 +42,12 @@ public class App {
         numbers.add("500000");
         numbers.add("990000");
         numbers.add("1234567");
-        numbers.add("12345678");
+        numbers.add("12,345,678");
         numbers.add("234567895");
         numbers.add("723456789012");
         numbers.add("823456789012099");
+        numbers.add("8234567890120991");
+        numbers.add("8234567890120991234456789012099");
 
         printNumbers(numbersToWords, numbers);
     }

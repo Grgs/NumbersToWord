@@ -40,17 +40,26 @@ public class EnglishNumbers {
         numberMap.put(90D, "ninety");
         numberMap.put(100D, "hundred");
         numberMap.put(1000D, "thousand");
-        numberMap.put(1000000D, "million");
-        numberMap.put(1000000000D, "billion");
-        numberMap.put(1000000000000D, "trillion");
-        numberMap.put(1000000000000000D, "quadrillion");
-        numberMap.put(1000000000000000000D, "quintillion");
-        numberMap.put(1000000000000000000000D, "sextillion");
-        numberMap.put(1000000000000000000000000D, "septillion");
-        numberMap.put(1000000000000000000000000000D, "octillion");
-        numberMap.put(1000000000000000000000000000000D, "nonillion");
-        numberMap.put(10000000000000000000000000000000000D, "decillion");
-        numberMap.put(10000000000000000000000000000000000000D, "undecillion");
+        numberMap.put(Math.pow(10, 6), "million");
+        numberMap.put(Math.pow(10, 9), "billion");
+        numberMap.put(Math.pow(10, 12), "trillion");
+        numberMap.put(Math.pow(10, 15), "quadrillion");
+        numberMap.put(Math.pow(10, 18), "quintillion");
+        numberMap.put(Math.pow(10, 21), "sextillion");
+        numberMap.put(Math.pow(10, 24), "septillion");
+        numberMap.put(Math.pow(10, 27), "octillion");
+        numberMap.put(Math.pow(10, 30), "nonillion");
+        numberMap.put(Math.pow(10, 33), "decillion");
+        numberMap.put(Math.pow(10, 36), "undecillion");
+        numberMap.put(Math.pow(10, 39), "duodecillion");
+        numberMap.put(Math.pow(10, 42), "tredecillion");
+        numberMap.put(Math.pow(10, 45), "quattuordecillion");
+        numberMap.put(Math.pow(10, 48), "quin-decillion");
+        numberMap.put(Math.pow(10, 51), "sex-decillion");
+        numberMap.put(Math.pow(10, 54), "septen-decillion");
+        numberMap.put(Math.pow(10, 57), "octo-decillion");
+        numberMap.put(Math.pow(10, 60), "novem-decillion");
+        numberMap.put(Math.pow(10, 63), "vigintillion");
     }
 
 }

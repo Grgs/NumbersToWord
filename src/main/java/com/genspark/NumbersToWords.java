@@ -35,28 +35,13 @@ public class NumbersToWords implements INumbersToWords {
             if (number % 100 != 0) {
                 words += " and " + getWords(number % 100);
             }
-        } else if (number < 1000000) {
-            words += getWords(Math.floor(number / 1000)) + " " + englishNumbers.numberMap.get(1000D);
-            if (number % 1000 != 0) {
-                words += " " + getWords(number % 1000);
+        } else {
+            int exponent = (int) Math.floor(Math.log10(number) / 3);
+            double divisor = Math.pow(10, exponent * 3);
+            words += getWords(number / divisor) + " " + englishNumbers.numberMap.get(divisor);
+            if (number % divisor != 0) {
+                words += " " + getWords(number % divisor);
             }
-        } else if (number < 1000000000) {
-            words += getWords(Math.floor(number / 1000000)) + " " + englishNumbers.numberMap.get(1000000D);
-            if (number % 1000000 != 0) {
-                words += " " + getWords(number % 1000000);
-            }
-        } else if (number < 1000000000000D) {
-            words += getWords(Math.floor(number / 1000000000)) + " " + englishNumbers.numberMap.get(1000000000D);
-            if (number % 1000000000 != 0) {
-                words += " " + getWords(number % 1000000000);
-            }
-        } else if (number < 1000000000000000D) {
-            words += getWords(Math.floor(number / 1000000000000D)) + " " + englishNumbers.numberMap.get(1000000000000D);
-            if (number % 1000000000000D != 0) {
-                words += " " + getWords(number % 1000000000000D);
-            }
-        } else if (number < 1000000000000000000D) {
-            words += getWords(Math.floor(number / 1000000000000000D)) + " " + englishNumbers.numberMap.get(1000000000000000D);
         }
         return words;
     }
@@ -66,7 +51,7 @@ public class NumbersToWords implements INumbersToWords {
      */
     @Override
     public String getWords() {
-        return getWords(Double.parseDouble(numberString.strip().replace(",", "")));
+        return getWords(Double.parseDouble(numberString.replaceAll("[ ,]", "")));
     }
 
     @Override
