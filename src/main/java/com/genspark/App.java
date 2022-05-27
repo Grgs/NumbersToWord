@@ -6,10 +6,17 @@ import java.util.ArrayList;
  * An app for converting numbers to words.
  */
 public class App {
+    private static void printNumbers(NumbersToWords numbersToWords, ArrayList<String> numbers) {
+        for (String number : numbers) {
+            numbersToWords.setNumberString(number);
+            System.out.printf("%s is: %s%n", number, numbersToWords.getWords());
+        }
+    }
+
     public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
         NumbersToWords numbersToWords = new NumbersToWords();
-        System.out.println("Enter a number: ");
+//        System.out.println("Enter a number: ");
 //        numbersToWords.setNumberString(scanner.nextLine().strip());
         ArrayList<String> numbers = new ArrayList<>();
         numbers.add("-1");
@@ -40,9 +47,6 @@ public class App {
         numbers.add("723456789012");
         numbers.add("823456789012099");
 
-        for (String number : numbers) {
-            numbersToWords.setNumberString(number);
-            System.out.printf("%s is: %s%n", number, numbersToWords.getWords());
-        }
+        printNumbers(numbersToWords, numbers);
     }
 }

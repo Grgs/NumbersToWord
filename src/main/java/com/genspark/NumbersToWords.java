@@ -23,7 +23,7 @@ public class NumbersToWords implements INumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (englishNumbers.numberMap.containsKey(number)) {
+        if (englishNumbers.numberMap.containsKey(number) && number < 100) {
             words += englishNumbers.numberMap.get(number);
         } else if (number < 100) {
             words += englishNumbers.numberMap.get(Math.floor(number / 10) * 10);
