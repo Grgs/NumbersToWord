@@ -3,8 +3,7 @@ package com.genspark;
 import java.util.Scanner;
 
 /**
- * Hello world!
- *
+ * An app for converting numbers to words.
  */
 public class App 
 {
