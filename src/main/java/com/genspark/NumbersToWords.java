@@ -15,7 +15,7 @@ public class NumbersToWords implements INumbersToWords {
         modernNumbers = new ModernNumbers();
     }
 
-    private String getWords(Double number) {
+    public String getWords(Double number) {
         String words = "";
         if (numberString.length() == 0) {
             return words;
