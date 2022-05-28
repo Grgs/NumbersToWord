@@ -5,11 +5,11 @@ import java.util.HashMap;
 /**
  * list of mappings from numbers to words.
  */
-public class EnglishNumbers {
+public class ModernNumbers implements IEnglishNumbers {
     public HashMap<Double, String> numberMap;
     public HashMap<Double, String> tensMap;
 
-    EnglishNumbers() {
+    ModernNumbers() {
         numberMap = new HashMap<>();
         numberMap.put(0D, "zero");
         numberMap.put(1D, "one");

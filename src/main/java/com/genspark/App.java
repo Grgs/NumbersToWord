@@ -62,8 +62,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        runOnConsole();
-//        testing();
+//        runOnConsole();
+        testing();
     }
 
     private static void runOnConsole() {

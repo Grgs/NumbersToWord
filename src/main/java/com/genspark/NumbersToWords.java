@@ -8,11 +8,11 @@ public class NumbersToWords implements INumbersToWords {
      * numberString is the number to be converted to words.
      */
     String numberString;
-    EnglishNumbers englishNumbers;
+    ModernNumbers modernNumbers;
 
     NumbersToWords() {
         numberString = "";
-        englishNumbers = new EnglishNumbers();
+        modernNumbers = new ModernNumbers();
     }
 
     private String getWords(Double number) {
@@ -24,22 +24,22 @@ public class NumbersToWords implements INumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (englishNumbers.numberMap.containsKey(number)) {
-            words += englishNumbers.numberMap.get(number);
+        if (modernNumbers.numberMap.containsKey(number)) {
+            words += modernNumbers.numberMap.get(number);
         } else if (number < 100) {
-            words += englishNumbers.numberMap.get(Math.floor(number / 10) * 10);
+            words += modernNumbers.numberMap.get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + englishNumbers.numberMap.get(Math.floor(number) % 10);
+                words += "-" + modernNumbers.numberMap.get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += englishNumbers.numberMap.get(Math.floor(number / 100)) + " " + englishNumbers.tensMap.get(100D);
+            words += modernNumbers.numberMap.get(Math.floor(number / 100)) + " " + modernNumbers.tensMap.get(100D);
             if (number % 100 != 0) {
                 words += " and " + getWords(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
-            words += getWords(Math.floor(number / divisor)) + " " + englishNumbers.tensMap.get(divisor);
+            words += getWords(Math.floor(number / divisor)) + " " + modernNumbers.tensMap.get(divisor);
             if (number % divisor != 0) {
                 words += " " + getWords(number % divisor);
             }
@@ -53,7 +53,7 @@ public class NumbersToWords implements INumbersToWords {
         String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
                 split("");
         for (String fractionChar : fractionChars) {
-            words.append(" ").append(englishNumbers.numberMap.get(Double.parseDouble(fractionChar)));
+            words.append(" ").append(modernNumbers.numberMap.get(Double.parseDouble(fractionChar)));
         }
         return words.toString().strip();
     }
