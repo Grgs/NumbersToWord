@@ -1,6 +1,7 @@
 package com.genspark;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * An app for converting numbers to words.
@@ -13,11 +14,8 @@ public class App {
         }
     }
 
-    public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
+    public static void testing() {
         NumbersToWords numbersToWords = new NumbersToWords();
-//        System.out.println("Enter a number: ");
-//        numbersToWords.setNumberString(scanner.nextLine().strip());
         ArrayList<String> numbers = new ArrayList<>();
         numbers.add("-1");
         numbers.add("-2");
@@ -35,8 +33,20 @@ public class App {
         numbers.add("49");
         numbers.add("68");
         numbers.add("+88");
+        numbers.add("100");
+        numbers.add("101");
+        numbers.add("110");
+        numbers.add("111");
         numbers.add("535");
         numbers.add("1,000");
+        numbers.add("1000");
+        numbers.add("1001");
+        numbers.add("1010");
+        numbers.add("1011");
+        numbers.add("1100");
+        numbers.add("1101");
+        numbers.add("1110");
+        numbers.add("1111");
         numbers.add("8000");
         numbers.add("900,00");
         numbers.add("500000");
@@ -48,7 +58,19 @@ public class App {
         numbers.add("823456789012099");
         numbers.add("8234567890120991");
         numbers.add("8234567890120991234456789012099");
-
         printNumbers(numbersToWords, numbers);
+    }
+    public static void main(String[] args) {
+        runOnConsole();
+//        testing();
+    }
+
+    private static void runOnConsole() {
+        Scanner scanner = new Scanner(System.in);
+        NumbersToWords numbersToWords = new NumbersToWords();
+        System.out.println("Enter a number: ");
+        String number = scanner.nextLine();
+        numbersToWords.setNumberString(number);
+        System.out.printf("%s is: %s%n", number, numbersToWords.getWords());
     }
 }

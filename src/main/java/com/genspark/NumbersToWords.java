@@ -23,22 +23,22 @@ public class NumbersToWords implements INumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (englishNumbers.numberMap.containsKey(number) && number < 100) {
+        if (englishNumbers.numberMap.containsKey(number)) {
             words += englishNumbers.numberMap.get(number);
         } else if (number < 100) {
             words += englishNumbers.numberMap.get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + englishNumbers.numberMap.get(number % 10);
+                words += "-" + englishNumbers.numberMap.get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += englishNumbers.numberMap.get(Math.floor(number / 100)) + " " + englishNumbers.numberMap.get(100D);
+            words += englishNumbers.numberMap.get(Math.floor(number / 100)) + " " + englishNumbers.tensMap.get(100D);
             if (number % 100 != 0) {
                 words += " and " + getWords(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
-            words += getWords(number / divisor) + " " + englishNumbers.numberMap.get(divisor);
+            words += getWords(Math.floor(number / divisor)) + " " + englishNumbers.tensMap.get(divisor);
             if (number % divisor != 0) {
                 words += " " + getWords(number % divisor);
             }

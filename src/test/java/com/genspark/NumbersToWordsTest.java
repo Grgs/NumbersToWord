@@ -39,5 +39,12 @@ public class NumbersToWordsTest extends TestCase {
         numbersToWords.setNumberString("1110");
         assertEquals("one thousand one hundred and ten", numbersToWords.getWords());
         numbersToWords.setNumberString("1111");
+        assertEquals("one thousand one hundred and eleven", numbersToWords.getWords());
+        numbersToWords.setNumberString("8000");
+        assertEquals("eight thousand", numbersToWords.getWords());
+        numbersToWords.setNumberString("999,000");
+        assertEquals("nine hundred and ninety-nine thousand", numbersToWords.getWords());
+        numbersToWords.setNumberString("6,999,000");
+        assertEquals("six million nine hundred and ninety-nine thousand", numbersToWords.getWords());
     }
 }

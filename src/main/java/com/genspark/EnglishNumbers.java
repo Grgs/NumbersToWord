@@ -7,6 +7,7 @@ import java.util.HashMap;
  */
 public class EnglishNumbers {
     public HashMap<Double, String> numberMap;
+    public HashMap<Double, String> tensMap;
 
     EnglishNumbers() {
         numberMap = new HashMap<>();
@@ -38,28 +39,30 @@ public class EnglishNumbers {
         numberMap.put(70D, "seventy");
         numberMap.put(80D, "eighty");
         numberMap.put(90D, "ninety");
-        numberMap.put(100D, "hundred");
-        numberMap.put(1000D, "thousand");
-        numberMap.put(Math.pow(10, 6), "million");
-        numberMap.put(Math.pow(10, 9), "billion");
-        numberMap.put(Math.pow(10, 12), "trillion");
-        numberMap.put(Math.pow(10, 15), "quadrillion");
-        numberMap.put(Math.pow(10, 18), "quintillion");
-        numberMap.put(Math.pow(10, 21), "sextillion");
-        numberMap.put(Math.pow(10, 24), "septillion");
-        numberMap.put(Math.pow(10, 27), "octillion");
-        numberMap.put(Math.pow(10, 30), "nonillion");
-        numberMap.put(Math.pow(10, 33), "decillion");
-        numberMap.put(Math.pow(10, 36), "undecillion");
-        numberMap.put(Math.pow(10, 39), "duodecillion");
-        numberMap.put(Math.pow(10, 42), "tredecillion");
-        numberMap.put(Math.pow(10, 45), "quattuordecillion");
-        numberMap.put(Math.pow(10, 48), "quin-decillion");
-        numberMap.put(Math.pow(10, 51), "sex-decillion");
-        numberMap.put(Math.pow(10, 54), "septen-decillion");
-        numberMap.put(Math.pow(10, 57), "octo-decillion");
-        numberMap.put(Math.pow(10, 60), "novem-decillion");
-        numberMap.put(Math.pow(10, 63), "vigintillion");
+
+        tensMap = new HashMap<>();
+        tensMap.put(100D, "hundred");
+        tensMap.put(1000D, "thousand");
+        tensMap.put(Math.pow(10, 6), "million");
+        tensMap.put(Math.pow(10, 9), "billion");
+        tensMap.put(Math.pow(10, 12), "trillion");
+        tensMap.put(Math.pow(10, 15), "quadrillion");
+        tensMap.put(Math.pow(10, 18), "quintillion");
+        tensMap.put(Math.pow(10, 21), "sextillion");
+        tensMap.put(Math.pow(10, 24), "septillion");
+        tensMap.put(Math.pow(10, 27), "octillion");
+        tensMap.put(Math.pow(10, 30), "nonillion");
+        tensMap.put(Math.pow(10, 33), "decillion");
+        tensMap.put(Math.pow(10, 36), "undecillion");
+        tensMap.put(Math.pow(10, 39), "duodecillion");
+        tensMap.put(Math.pow(10, 42), "tredecillion");
+        tensMap.put(Math.pow(10, 45), "quattuordecillion");
+        tensMap.put(Math.pow(10, 48), "quin-decillion");
+        tensMap.put(Math.pow(10, 51), "sex-decillion");
+        tensMap.put(Math.pow(10, 54), "septen-decillion");
+        tensMap.put(Math.pow(10, 57), "octo-decillion");
+        tensMap.put(Math.pow(10, 60), "novem-decillion");
+        tensMap.put(Math.pow(10, 63), "vigintillion");
     }
 
 }
