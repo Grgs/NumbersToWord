@@ -1,6 +1,6 @@
 package com.genspark;
 
-public class TraditionalLongScaleBritishNumbers extends ModernNumbers implements IEnglishNumbers{
+public class TraditionalLongScaleBritishNumbers extends ModernNumbers implements IEnglishNumbers {
     TraditionalLongScaleBritishNumbers() {
         super();
         this.tensMap.replace(Math.pow(10, 9), "Thousand million");
