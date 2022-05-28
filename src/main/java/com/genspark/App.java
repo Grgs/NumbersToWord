@@ -60,6 +60,7 @@ public class App {
         numbers.add("8234567890120991234456789012099");
         printNumbers(numbersToWords, numbers);
     }
+
     public static void main(String[] args) {
         runOnConsole();
 //        testing();

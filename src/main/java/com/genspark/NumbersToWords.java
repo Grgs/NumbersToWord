@@ -8,10 +8,11 @@ public class NumbersToWords implements INumbersToWords {
      * numberString is the number to be converted to words.
      */
     String numberString;
-    EnglishNumbers englishNumbers = new EnglishNumbers();
+    EnglishNumbers englishNumbers;
 
     NumbersToWords() {
         numberString = "";
+        englishNumbers = new EnglishNumbers();
     }
 
     private String getWords(Double number) {
@@ -46,12 +47,29 @@ public class NumbersToWords implements INumbersToWords {
         return words;
     }
 
+    private String getWordsFraction(double fraction) {
+        StringBuilder words = new StringBuilder();
+        String fractionString = String.format("%f", fraction);
+        String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
+                split("");
+        for (String fractionChar : fractionChars) {
+            words.append(" ").append(englishNumbers.numberMap.get(Double.parseDouble(fractionChar)));
+        }
+        return words.toString().strip();
+    }
+
     /**
      * @return natural language interpretation the number in numberString.
      */
     @Override
     public String getWords() {
-        return getWords(Double.parseDouble(numberString.replaceAll("[ ,]", "")));
+        double number = Double.parseDouble(numberString.replaceAll("[ ,]", ""));
+        double fraction = number - Math.floor(number);
+        if (fraction != 0) {
+            return getWords(Math.floor(number)) + " point " + getWordsFraction(fraction);
+        } else {
+            return getWords(number);
+        }
     }
 
     @Override
