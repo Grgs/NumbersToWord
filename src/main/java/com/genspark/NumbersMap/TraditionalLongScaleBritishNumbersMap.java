@@ -36,27 +36,26 @@ public class TraditionalLongScaleBritishNumbersMap implements NumbersMap {
         this.tensMap.put(Math.pow(10, 57), "thousand nonillion");
         this.tensMap.put(Math.pow(10, 60), "decillion");
         this.tensMap.put(Math.pow(10, 63), "thousand decillion");
-        this.tensMap.put(Math.pow(10, 66), "Undecillion");
-        this.tensMap.put(Math.pow(10, 69), "Thousand undecillion");
-        this.tensMap.put(Math.pow(10, 72), "Duodecillion");
-        this.tensMap.put(Math.pow(10, 75), "Thousand duodecillion");
-        this.tensMap.put(Math.pow(10, 78), "Tredecillion");
-        this.tensMap.put(Math.pow(10, 81), "Thousand tredecillion");
-        this.tensMap.put(Math.pow(10, 84), "Quattuordecillion");
-        this.tensMap.put(Math.pow(10, 87), "Thousand quattuordecillion");
-        this.tensMap.put(Math.pow(10, 90), "Quindecillion");
-        this.tensMap.put(Math.pow(10, 93), "Thousand quindecillion");
-        this.tensMap.put(Math.pow(10, 96), "Sedecillion");
-        this.tensMap.put(Math.pow(10, 99), "Thousand sedecillion");
-        this.tensMap.put(Math.pow(10, 102), "Septendecillion");
-        this.tensMap.put(Math.pow(10, 105), "Thousand septendecillion");
-        this.tensMap.put(Math.pow(10, 108), "Octodecillion");
-        this.tensMap.put(Math.pow(10, 111), "Thousand octodecillion");
-        this.tensMap.put(Math.pow(10, 114), "Novendecillion");
-        this.tensMap.put(Math.pow(10, 117), "Thousand novendecillion");
-        this.tensMap.put(Math.pow(10, 120), "Vigintillion");
-        this.tensMap.put(Math.pow(10, 123), "Thousand vigintillion");
-
+        this.tensMap.put(Math.pow(10, 66), "undecillion");
+        this.tensMap.put(Math.pow(10, 69), "thousand undecillion");
+        this.tensMap.put(Math.pow(10, 72), "duodecillion");
+        this.tensMap.put(Math.pow(10, 75), "thousand duodecillion");
+        this.tensMap.put(Math.pow(10, 78), "tredecillion");
+        this.tensMap.put(Math.pow(10, 81), "thousand tredecillion");
+        this.tensMap.put(Math.pow(10, 84), "quattuordecillion");
+        this.tensMap.put(Math.pow(10, 87), "thousand quattuordecillion");
+        this.tensMap.put(Math.pow(10, 90), "quindecillion");
+        this.tensMap.put(Math.pow(10, 93), "thousand quindecillion");
+        this.tensMap.put(Math.pow(10, 96), "sedecillion");
+        this.tensMap.put(Math.pow(10, 99), "thousand sedecillion");
+        this.tensMap.put(Math.pow(10, 102), "septendecillion");
+        this.tensMap.put(Math.pow(10, 105), "thousand septendecillion");
+        this.tensMap.put(Math.pow(10, 108), "octodecillion");
+        this.tensMap.put(Math.pow(10, 111), "thousand octodecillion");
+        this.tensMap.put(Math.pow(10, 114), "novendecillion");
+        this.tensMap.put(Math.pow(10, 117), "thousand novendecillion");
+        this.tensMap.put(Math.pow(10, 120), "vigintillion");
+        this.tensMap.put(Math.pow(10, 123), "thousand vigintillion");
 
     }
 
