@@ -1,5 +1,8 @@
 package com.genspark;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,8 +17,7 @@ public class App {
         }
     }
 
-    public static void testing() {
-        NumbersToWords numbersToWords = new NumbersToWords();
+    public static void testing(NumbersToWords numbersToWords) {
         ArrayList<String> numbers = new ArrayList<>();
         numbers.add("-1");
         numbers.add("-2");
@@ -62,13 +64,14 @@ public class App {
     }
 
     public static void main(String[] args) {
-//        runOnConsole();
-        testing();
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        NumbersToWords numbersToWords = context.getBean(WesternNumbersToWords.class);
+//        runOnConsole(numbersToWords);
+        testing(numbersToWords);
     }
 
-    private static void runOnConsole() {
+    private static void runOnConsole(NumbersToWords numbersToWords) {
         Scanner scanner = new Scanner(System.in);
-        NumbersToWords numbersToWords = new NumbersToWords();
         System.out.println("Enter a number: ");
         String number = scanner.nextLine();
         numbersToWords.setNumberString(number);

@@ -1,7 +1,10 @@
 package com.genspark;
 
-public class TraditionalLongScaleEuropeanNumbers extends ModernNumbers implements IEnglishNumbers {
-    TraditionalLongScaleEuropeanNumbers() {
+import org.springframework.stereotype.Component;
+
+@Component
+public class TraditionalLongScaleEuropeanNumbersMap extends ModernNumbersMap {
+    TraditionalLongScaleEuropeanNumbersMap() {
         super();
         this.tensMap.replace(Math.pow(10, 9), "millard");
         this.tensMap.replace(Math.pow(10, 12), "billion");

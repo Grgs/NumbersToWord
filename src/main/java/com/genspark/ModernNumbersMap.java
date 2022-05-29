@@ -1,15 +1,20 @@
 package com.genspark;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
 /**
  * list of mappings from numbers to words.
  */
-public class ModernNumbers implements IEnglishNumbers {
+@Component
+@Primary
+public class ModernNumbersMap implements NumbersMap {
     public HashMap<Double, String> numberMap;
     public HashMap<Double, String> tensMap;
 
-    ModernNumbers() {
+    ModernNumbersMap() {
         numberMap = new HashMap<>();
         numberMap.put(0D, "zero");
         numberMap.put(1D, "one");

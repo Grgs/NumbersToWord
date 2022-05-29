@@ -1,10 +1,13 @@
 package com.genspark;
 
-public class IndianNumbersToWords extends NumbersToWords implements INumbersToWords {
+import org.springframework.stereotype.Component;
+
+@Component
+public class IndianNumbersToWords extends WesternNumbersToWords implements NumbersToWords {
     IndianNumbersToWords() {
         // FIXME
         super();
-        this.modernNumbers = new IndianEnglishNumbers();
+        this.modernNumbers = new IndianEnglishNumbersMap();
     }
 
     @Override
