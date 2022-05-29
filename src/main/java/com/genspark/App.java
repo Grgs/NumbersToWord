@@ -27,6 +27,7 @@ public class App {
         numbers.add("-12");
         numbers.add("-68");
         numbers.add("-100");
+        numbers.add("-845654");
         numbers.add("0");
         numbers.add("-0");
         numbers.add("1");
@@ -45,8 +46,8 @@ public class App {
         numbers.add("1,000");
         numbers.add("1000");
         numbers.add("1001");
-        numbers.add("1010");
-        numbers.add("1011");
+        numbers.add("6010");
+        numbers.add("7011");
         numbers.add("1100");
         numbers.add("1101");
         numbers.add("1110");
@@ -58,7 +59,6 @@ public class App {
         numbers.add("1234567");
         numbers.add("12,345,678");
         numbers.add("234567895");
-        numbers.add("723456789012");
         numbers.add("823456789012099");
         numbers.add("8234567890120991");
         numbers.add("8234567890120991234456789012099");
@@ -67,7 +67,7 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        NumbersToWords numbersToWords = context.getBean(WesternNumbersToWords.class);
+        NumbersToWords numbersToWords = context.getBean(NumbersToWords.class);
 //        runOnConsole(numbersToWords);
         testing(numbersToWords);
     }
