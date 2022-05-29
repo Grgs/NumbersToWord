@@ -8,6 +8,7 @@ import com.genspark.NumbersToWords.NumbersToWords;
 import com.genspark.NumbersToWords.WesternNumbersToWords;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import java.util.Scanner;
 
@@ -46,8 +47,9 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         NumbersToWords numbersToWords = context.getBean(NumbersToWords.class);
         runOnConsole(numbersToWords);
+        context.close();
     }
 }
