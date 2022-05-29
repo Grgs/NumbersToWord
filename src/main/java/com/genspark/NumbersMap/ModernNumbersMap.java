@@ -14,40 +14,10 @@ public class ModernNumbersMap implements NumbersMap {
     /**
      * list of mappings from numbers to words.
      */
-    public HashMap<Double, String> numberMap;
+    public HashMap<Double, String> numberMap = new NumberMap().getNumberMap();
     public HashMap<Double, String> tensMap;
 
     public ModernNumbersMap() {
-        numberMap = new HashMap<>();
-        numberMap.put(0D, "zero");
-        numberMap.put(1D, "one");
-        numberMap.put(2D, "two");
-        numberMap.put(3D, "three");
-        numberMap.put(4D, "four");
-        numberMap.put(5D, "five");
-        numberMap.put(6D, "six");
-        numberMap.put(7D, "seven");
-        numberMap.put(8D, "eight");
-        numberMap.put(9D, "nine");
-        numberMap.put(10D, "ten");
-        numberMap.put(11D, "eleven");
-        numberMap.put(12D, "twelve");
-        numberMap.put(13D, "thirteen");
-        numberMap.put(14D, "fourteen");
-        numberMap.put(15D, "fifteen");
-        numberMap.put(16D, "sixteen");
-        numberMap.put(17D, "seventeen");
-        numberMap.put(18D, "eighteen");
-        numberMap.put(19D, "nineteen");
-        numberMap.put(20D, "twenty");
-        numberMap.put(30D, "thirty");
-        numberMap.put(40D, "forty");
-        numberMap.put(50D, "fifty");
-        numberMap.put(60D, "sixty");
-        numberMap.put(70D, "seventy");
-        numberMap.put(80D, "eighty");
-        numberMap.put(90D, "ninety");
-
         tensMap = new HashMap<>();
         tensMap.put(100D, "hundred");
         tensMap.put(1000D, "thousand");
@@ -71,10 +41,27 @@ public class ModernNumbersMap implements NumbersMap {
         tensMap.put(Math.pow(10, 57), "octo-decillion");
         tensMap.put(Math.pow(10, 60), "novem-decillion");
         tensMap.put(Math.pow(10, 63), "vigintillion");
-    }
+        tensMap.put(Math.pow(10, 66), "Unvigintillion");
+        tensMap.put(Math.pow(10, 69), "Duovigintillion");
+        tensMap.put(Math.pow(10, 72), "Tresvigintillion");
+        tensMap.put(Math.pow(10, 75), "Quattuorvigintillion");
+        tensMap.put(Math.pow(10, 78), "Quinvigintillion");
+        tensMap.put(Math.pow(10, 81), "Sesvigintillion");
+        tensMap.put(Math.pow(10, 84), "Septemvigintillion");
+        tensMap.put(Math.pow(10, 87), "Octovigintillion");
+        tensMap.put(Math.pow(10, 90), "Novemvigintillion");
+        tensMap.put(Math.pow(10, 93), "Trigintillion");
+        tensMap.put(Math.pow(10, 96), "Untrigintillion");
+        tensMap.put(Math.pow(10, 99), "Duotrigintillion");
+        tensMap.put(Math.pow(10, 102), "Trestrigintillion");
+        tensMap.put(Math.pow(10, 105), "Quattuortrigintillion");
+        tensMap.put(Math.pow(10, 108), "Quintrigintillion");
+        tensMap.put(Math.pow(10, 111), "Sestrigintillion");
+        tensMap.put(Math.pow(10, 114), "Septentrigintillion");
+        tensMap.put(Math.pow(10, 117), "Octotrigintillion");
+        tensMap.put(Math.pow(10, 120), "Noventrigintillion");
+        tensMap.put(Math.pow(10, 123), "Quadragintillion");
 
-    public HashMap<Double, String> getNumberMap() {
-        return numberMap;
     }
 
     public void setNumberMap(HashMap<Double, String> numberMap) {

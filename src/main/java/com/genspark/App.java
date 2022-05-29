@@ -9,7 +9,6 @@ import com.genspark.NumbersToWords.WesternNumbersToWords;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
