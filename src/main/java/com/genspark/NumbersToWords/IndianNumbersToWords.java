@@ -1,19 +1,19 @@
 package com.genspark.NumbersToWords;
 
 import com.genspark.NumbersMap.IndianNumbersMap;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Primary
 public class IndianNumbersToWords extends WesternNumbersToWords implements NumbersToWords {
     IndianNumbersToWords() {
-        // FIXME
         super();
         this.numbersMap = new IndianNumbersMap();
     }
 
     @Override
     public String getWords(Double number) {
-        // FIXME
         String words = "";
         if (numberString.length() == 0) {
             return words;
@@ -35,8 +35,8 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
                 words += " and " + getWords(number % 100);
             }
         } else {
-            int exponent = (int) Math.floor(Math.log10(number) / 2);
-            double divisor = Math.pow(10, exponent * 2);
+            int exponent = (int) Math.floor(Math.log10(number) - 1) / 2;
+            double divisor = Math.pow(10, exponent * 2 + 1);
             words += getWords(Math.floor(number / divisor)) + " " + numbersMap.tensMap.get(divisor);
             if (number % divisor != 0) {
                 words += " " + getWords(number % divisor);
