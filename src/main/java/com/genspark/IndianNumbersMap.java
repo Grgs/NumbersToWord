@@ -3,8 +3,8 @@ package com.genspark;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IndianEnglishNumbersMap extends ModernNumbersMap {
-    IndianEnglishNumbersMap() {
+public class IndianNumbersMap extends ModernNumbersMap {
+    IndianNumbersMap() {
         super();
         this.tensMap.remove(Math.pow(10, 9));
         this.tensMap.remove(Math.pow(10, 12));

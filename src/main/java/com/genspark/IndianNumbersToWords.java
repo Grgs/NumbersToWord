@@ -7,7 +7,7 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
     IndianNumbersToWords() {
         // FIXME
         super();
-        this.modernNumbers = new IndianEnglishNumbersMap();
+        this.modernNumbers = new IndianNumbersMap();
     }
 
     @Override
