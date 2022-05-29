@@ -6,9 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 //@Primary
 public class IndianNumbersToWords extends WesternNumbersToWords implements NumbersToWords {
-    IndianNumbersToWords() {
-        super();
-        this.numbersMap = new IndianNumbersMap();
+    public IndianNumbersToWords() {
+        super(new IndianNumbersMap());
     }
 
     @Override
@@ -21,22 +20,22 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
             words += "negative ";
             number *= -1;
         }
-        if (numbersMap.numberMap.containsKey(number)) {
-            words += numbersMap.numberMap.get(number);
+        if (numbersMap.getNumberMap().containsKey(number)) {
+            words += numbersMap.getNumberMap().get(number);
         } else if (number < 100) {
-            words += numbersMap.numberMap.get(Math.floor(number / 10) * 10);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + numbersMap.numberMap.get(Math.floor(number) % 10);
+                words += "-" + numbersMap.getNumberMap().get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersMap.numberMap.get(Math.floor(number / 100)) + " " + numbersMap.tensMap.get(100D);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getTensMap().get(100D);
             if (number % 100 != 0) {
                 words += " and " + getWords(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) - 1) / 2;
             double divisor = Math.pow(10, exponent * 2 + 1);
-            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.tensMap.get(divisor);
+            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.getTensMap().get(divisor);
             if (number % divisor != 0) {
                 words += " " + getWords(number % divisor);
             }

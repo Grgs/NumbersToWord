@@ -12,18 +12,18 @@ public class TraditionalLongScaleEuropeanNumbersMap extends ModernNumbersMap {
         this.tensMap.replace(Math.pow(10, 18), "trillion");
         this.tensMap.replace(Math.pow(10, 21), "trilliard");
         this.tensMap.replace(Math.pow(10, 24), "quadrillion");
-        this.tensMap.replace(Math.pow(10, 27), "Quadrilliard");
-        this.tensMap.replace(Math.pow(10, 30), "Quintillion");
-        this.tensMap.replace(Math.pow(10, 33), "Quintilliard");
-        this.tensMap.replace(Math.pow(10, 36), "Sextillion");
-        this.tensMap.replace(Math.pow(10, 39), "Sextilliard");
-        this.tensMap.replace(Math.pow(10, 42), "Septillion");
-        this.tensMap.replace(Math.pow(10, 45), "Septilliard");
-        this.tensMap.replace(Math.pow(10, 48), "Octillion");
-        this.tensMap.replace(Math.pow(10, 51), "Octilliard");
-        this.tensMap.replace(Math.pow(10, 54), "Nonillion");
-        this.tensMap.replace(Math.pow(10, 57), "Nonilliard");
-        this.tensMap.replace(Math.pow(10, 60), "Decillion");
-        this.tensMap.replace(Math.pow(10, 63), "Decilliard");
+        this.tensMap.replace(Math.pow(10, 27), "quadrilliard");
+        this.tensMap.replace(Math.pow(10, 30), "quintillion");
+        this.tensMap.replace(Math.pow(10, 33), "quintilliard");
+        this.tensMap.replace(Math.pow(10, 36), "sextillion");
+        this.tensMap.replace(Math.pow(10, 39), "sextilliard");
+        this.tensMap.replace(Math.pow(10, 42), "septillion");
+        this.tensMap.replace(Math.pow(10, 45), "septilliard");
+        this.tensMap.replace(Math.pow(10, 48), "octillion");
+        this.tensMap.replace(Math.pow(10, 51), "octilliard");
+        this.tensMap.replace(Math.pow(10, 54), "nonillion");
+        this.tensMap.replace(Math.pow(10, 57), "nonilliard");
+        this.tensMap.replace(Math.pow(10, 60), "decillion");
+        this.tensMap.replace(Math.pow(10, 63), "decilliard");
     }
 }

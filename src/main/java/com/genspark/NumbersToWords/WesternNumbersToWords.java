@@ -1,8 +1,7 @@
 package com.genspark.NumbersToWords;
 
 import com.genspark.NumbersMap.ModernNumbersMap;
-import com.genspark.NumbersMap.TraditionalLongScaleBritishNumbersMap;
-import com.genspark.NumbersMap.TraditionalLongScaleEuropeanNumbersMap;
+import com.genspark.NumbersMap.NumbersMap;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -15,12 +14,23 @@ public class WesternNumbersToWords implements NumbersToWords {
     /**
      * numberString is the number to be converted to words.
      */
-    String numberString;
-    ModernNumbersMap numbersMap;
+    String numberString = "";
+
+    /**
+     * numbersMap is the map of numbers to words.
+     */
+    NumbersMap numbersMap;
 
     public WesternNumbersToWords() {
+    }
+
+    public WesternNumbersToWords(NumbersMap numbersMap) {
         numberString = "";
-        numbersMap = new ModernNumbersMap();
+        this.numbersMap = numbersMap;
+    }
+
+    public void setNumbersMap(NumbersMap numbersMap) {
+        this.numbersMap = numbersMap;
     }
 
     public String getWords(Double number) {
@@ -32,22 +42,22 @@ public class WesternNumbersToWords implements NumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (numbersMap.numberMap.containsKey(number)) {
-            words += numbersMap.numberMap.get(number);
+        if (numbersMap.getNumberMap().containsKey(number)) {
+            words += numbersMap.getNumberMap().get(number);
         } else if (number < 100) {
-            words += numbersMap.numberMap.get(Math.floor(number / 10) * 10);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + numbersMap.numberMap.get(Math.floor(number) % 10);
+                words += "-" + numbersMap.getNumberMap().get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersMap.numberMap.get(Math.floor(number / 100)) + " " + numbersMap.tensMap.get(100D);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getTensMap().get(100D);
             if (number % 100 != 0) {
                 words += " and " + getWords(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
-            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.tensMap.get(divisor);
+            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.getTensMap().get(divisor);
             if (number % divisor != 0) {
                 words += " " + getWords(number % divisor);
             }
@@ -61,7 +71,7 @@ public class WesternNumbersToWords implements NumbersToWords {
         String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
                 split("");
         for (String fractionChar : fractionChars) {
-            words.append(" ").append(numbersMap.numberMap.get(Double.parseDouble(fractionChar)));
+            words.append(" ").append(numbersMap.getNumberMap().get(Double.parseDouble(fractionChar)));
         }
         return words.toString().strip();
     }

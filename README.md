@@ -8,11 +8,11 @@ For modern english numbers 12345678901 will give the result:
 
 For Indian English 12345678901 will give the result:
 
-> twelve Arab thirty-four Crore fifty-six Lakh seventy-eight thousand nine hundred and one
+> twelve arab thirty-four crore fifty-six lakh seventy-eight thousand nine hundred and one
 
 For traditional long scale British 12345678901 will give the result:
 
-> twelve Thousand million three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and one
+> twelve thousand million three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and one
 
 For traditional long scale European 12345678901 will give the result:
 

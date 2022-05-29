@@ -26,12 +26,12 @@ public class IndianNumbersMap extends ModernNumbersMap {
         this.tensMap.remove(Math.pow(10, 60));
         this.tensMap.remove(Math.pow(10, 63));
 
-        this.tensMap.put(Math.pow(10, 5), "Lakh");
-        this.tensMap.put(Math.pow(10, 7), "Crore");
-        this.tensMap.put(Math.pow(10, 9), "Arab");
-        this.tensMap.put(Math.pow(10, 11), "Kharab");
-        this.tensMap.put(Math.pow(10, 13), "Nil");
-        this.tensMap.put(Math.pow(10, 15), "Padma");
-        this.tensMap.put(Math.pow(10, 17), "Shankh");
+        this.tensMap.put(Math.pow(10, 5), "lakh");
+        this.tensMap.put(Math.pow(10, 7), "crore");
+        this.tensMap.put(Math.pow(10, 9), "arab");
+        this.tensMap.put(Math.pow(10, 11), "kharab");
+        this.tensMap.put(Math.pow(10, 13), "nil");
+        this.tensMap.put(Math.pow(10, 15), "padma");
+        this.tensMap.put(Math.pow(10, 17), "shankh");
     }
 }

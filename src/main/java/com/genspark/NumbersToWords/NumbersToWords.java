@@ -1,5 +1,7 @@
 package com.genspark.NumbersToWords;
 
+import com.genspark.NumbersMap.NumbersMap;
+
 /**
  * Converts numbers to words.
  */
@@ -12,4 +14,7 @@ public interface NumbersToWords {
     String getNumberString();
 
     void setNumberString(String numberString);
+
+    void setNumbersMap(NumbersMap numbersMap);
+
 }
