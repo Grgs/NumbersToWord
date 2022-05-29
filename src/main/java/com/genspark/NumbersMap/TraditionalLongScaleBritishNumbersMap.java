@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TraditionalLongScaleBritishNumbersMap extends ModernNumbersMap {
-    TraditionalLongScaleBritishNumbersMap() {
+    public TraditionalLongScaleBritishNumbersMap() {
         super();
         this.tensMap.replace(Math.pow(10, 9), "Thousand million");
         this.tensMap.replace(Math.pow(10, 12), "Billion");

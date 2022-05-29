@@ -1,6 +1,8 @@
 package com.genspark.NumbersToWords;
 
 import com.genspark.NumbersMap.ModernNumbersMap;
+import com.genspark.NumbersMap.TraditionalLongScaleBritishNumbersMap;
+import com.genspark.NumbersMap.TraditionalLongScaleEuropeanNumbersMap;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
