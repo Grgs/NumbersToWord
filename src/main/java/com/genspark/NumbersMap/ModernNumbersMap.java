@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 /**
- * list of mappings from numbers to words.
+ * list of mappings from numbers to words according to western modern number systems.
  */
 @Component
 @Primary

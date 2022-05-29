@@ -3,6 +3,9 @@ package com.genspark.NumbersToWords;
 import com.genspark.NumbersMap.IndianNumbersMap;
 import org.springframework.stereotype.Component;
 
+/**
+ * Converts numbers to words according to the Indian English number system.
+ */
 @Component
 //@Primary
 public class IndianNumbersToWords extends WesternNumbersToWords implements NumbersToWords {

@@ -2,6 +2,10 @@ package com.genspark.NumbersMap;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Map of numbers to words according to the Indian English number system.
+ * <a href="https://en.wikipedia.org/wiki/Indian_numbering_system#Names_of_numbers">Indian English names of numbers</a>
+ */
 @Component
 public class IndianNumbersMap extends ModernNumbersMap {
     public IndianNumbersMap() {

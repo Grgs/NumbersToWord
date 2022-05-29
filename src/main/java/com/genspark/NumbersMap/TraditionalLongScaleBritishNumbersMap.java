@@ -2,6 +2,11 @@ package com.genspark.NumbersMap;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Map of numbers to words according to traditional long scale British number system.
+ * <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers#Extensions_of_the_standard_dictionary_numbers">
+ *     Dictionary numbers</a>
+ */
 @Component
 public class TraditionalLongScaleBritishNumbersMap extends ModernNumbersMap {
     public TraditionalLongScaleBritishNumbersMap() {

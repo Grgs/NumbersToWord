@@ -17,6 +17,9 @@ import java.util.Scanner;
  */
 public class App {
 
+    /**
+     * @param numbersToWords class that converts numbers to words.
+     */
     private static void runOnConsole(NumbersToWords numbersToWords) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number: ");

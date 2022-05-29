@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
- * Converts numbers to words.
+ * Converts numbers to words according to western number systems.
  */
 @Component
 @Primary
@@ -33,6 +33,10 @@ public class WesternNumbersToWords implements NumbersToWords {
         this.numbersMap = numbersMap;
     }
 
+    /**
+     * @param number number to be converted to words.
+     * @return natural language interpretation of the number.
+     */
     public String getWords(Double number) {
         String words = "";
         if (numberString.length() == 0) {
