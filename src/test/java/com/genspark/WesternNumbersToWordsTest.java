@@ -1,5 +1,6 @@
 package com.genspark;
 
+import com.genspark.NumbersToWords.WesternNumbersToWords;
 import junit.framework.TestCase;
 
 public class WesternNumbersToWordsTest extends TestCase {

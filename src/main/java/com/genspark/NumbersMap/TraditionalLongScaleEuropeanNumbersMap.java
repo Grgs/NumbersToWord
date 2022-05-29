@@ -1,4 +1,4 @@
-package com.genspark;
+package com.genspark.NumbersMap;
 
 import org.springframework.stereotype.Component;
 

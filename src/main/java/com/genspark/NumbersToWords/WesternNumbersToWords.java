@@ -1,5 +1,6 @@
-package com.genspark;
+package com.genspark.NumbersToWords;
 
+import com.genspark.NumbersMap.ModernNumbersMap;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,7 @@ public class WesternNumbersToWords implements NumbersToWords {
     String numberString;
     ModernNumbersMap modernNumbers;
 
-    WesternNumbersToWords() {
+    public WesternNumbersToWords() {
         numberString = "";
         modernNumbers = new ModernNumbersMap();
     }

@@ -1,4 +1,4 @@
-package com.genspark;
+package com.genspark.NumbersToWords;
 
 /**
  * Converts numbers to words.

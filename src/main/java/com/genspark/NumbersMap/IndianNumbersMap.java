@@ -1,10 +1,10 @@
-package com.genspark;
+package com.genspark.NumbersMap;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class IndianNumbersMap extends ModernNumbersMap {
-    IndianNumbersMap() {
+    public IndianNumbersMap() {
         super();
         this.tensMap.remove(Math.pow(10, 9));
         this.tensMap.remove(Math.pow(10, 12));

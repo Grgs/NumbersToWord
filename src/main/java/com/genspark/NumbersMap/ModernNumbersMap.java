@@ -1,4 +1,4 @@
-package com.genspark;
+package com.genspark.NumbersMap;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class ModernNumbersMap implements NumbersMap {
     public HashMap<Double, String> numberMap;
     public HashMap<Double, String> tensMap;
 
-    ModernNumbersMap() {
+    public ModernNumbersMap() {
         numberMap = new HashMap<>();
         numberMap.put(0D, "zero");
         numberMap.put(1D, "one");
