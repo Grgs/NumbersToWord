@@ -11,11 +11,9 @@ import java.util.HashMap;
 @Component
 public class IndianNumbersMap implements NumbersMap {
 
-    public HashMap<Double, String> numberMap = new NumberMap().getNumberMap();
-    public HashMap<Double, String> tensMap;
+    final public HashMap<Double, String> tensMap = new HashMap<>();
 
     public IndianNumbersMap() {
-        this.tensMap = new HashMap<>();
         this.tensMap.put(100D, "hundred");
         this.tensMap.put(1000D, "thousand");
         this.tensMap.put(Math.pow(10, 5), "lakh");

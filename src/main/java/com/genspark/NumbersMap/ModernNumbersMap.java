@@ -11,14 +11,9 @@ import java.util.HashMap;
 @Component
 @Primary
 public class ModernNumbersMap implements NumbersMap {
-    /**
-     * list of mappings from numbers to words.
-     */
-    public HashMap<Double, String> numberMap = new NumberMap().getNumberMap();
-    public HashMap<Double, String> tensMap;
+    final public HashMap<Double, String> tensMap = new HashMap<>();
 
     public ModernNumbersMap() {
-        tensMap = new HashMap<>();
         tensMap.put(100D, "hundred");
         tensMap.put(1000D, "thousand");
         tensMap.put(Math.pow(10, 6), "million");
@@ -64,16 +59,8 @@ public class ModernNumbersMap implements NumbersMap {
 
     }
 
-    public void setNumberMap(HashMap<Double, String> numberMap) {
-        this.numberMap = numberMap;
-    }
-
     public HashMap<Double, String> getTensMap() {
         return tensMap;
-    }
-
-    public void setTensMap(HashMap<Double, String> tensMap) {
-        this.tensMap = tensMap;
     }
 
 }

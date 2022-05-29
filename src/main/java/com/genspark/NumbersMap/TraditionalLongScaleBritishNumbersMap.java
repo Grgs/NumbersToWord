@@ -11,10 +11,9 @@ import java.util.HashMap;
  */
 @Component
 public class TraditionalLongScaleBritishNumbersMap implements NumbersMap {
-    public HashMap<Double, String> tensMap;
+    final public HashMap<Double, String> tensMap = new HashMap<>();
 
     public TraditionalLongScaleBritishNumbersMap() {
-        this.tensMap = new HashMap<>();
         this.tensMap.put(100D, "hundred");
         this.tensMap.put(1000D, "thousand");
         this.tensMap.put(Math.pow(10, 6), "million");
