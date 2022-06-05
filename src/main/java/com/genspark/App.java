@@ -28,6 +28,7 @@ public class App {
         String number = scanner.nextLine();
         numbersToWords.setNumberString(number);
         System.out.printf("For current configuration %s is: %s%n", number, numbersToWords.getWords());
+
         WesternNumbersToWords westernNumbersToWords = new WesternNumbersToWords();
         westernNumbersToWords.setMagnitudes(new ModernMagnitudes());
         westernNumbersToWords.setNumberString(number);

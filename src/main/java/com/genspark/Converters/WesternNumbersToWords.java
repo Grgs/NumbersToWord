@@ -21,7 +21,6 @@ public class WesternNumbersToWords implements NumbersToWords {
      * numbersMap is the map of numbers to words.
      */
     SmallNumberWords smallNumberWords = new SmallNumberWords();
-    //    Magnitudes magnitudes = new ModernMagnitudes();
     @Autowired
     Magnitudes magnitudes;
 
