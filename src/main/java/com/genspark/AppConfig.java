@@ -1,28 +1,27 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.ModernNumbersWords;
-import com.genspark.NumbersMap.NumbersWords;
 import com.genspark.Converters.NumbersToWords;
 import com.genspark.Converters.WesternNumbersToWords;
+import com.genspark.NumbersMap.Magnitudes;
+import com.genspark.NumbersMap.ModernMagnitudes;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * Application configuration.
  */
 @Configuration
-//@ComponentScan(basePackages = "com.genspark")
+@ComponentScan(basePackages = "com.genspark")
 public class AppConfig {
-    @Bean(name = "numbersWords")
-    public NumbersWords getNumbersMap() {
-        return new ModernNumbersWords();
+    @Bean(name = "magnitudes")
+    public Magnitudes getMagnitude() {
+        return new ModernMagnitudes();
     }
 
     @Bean(name = "numbersToWords")
     public NumbersToWords getNumbersToWords() {
-        WesternNumbersToWords numbersToWords = new WesternNumbersToWords();
-        numbersToWords.setNumbersMap(getNumbersMap());
-        return numbersToWords;
-//        return new IndianNumbersToWords();
+        return new WesternNumbersToWords();
     }
+
 }

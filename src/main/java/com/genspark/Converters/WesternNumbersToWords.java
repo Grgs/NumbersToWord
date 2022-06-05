@@ -1,6 +1,8 @@
 package com.genspark.Converters;
 
-import com.genspark.NumbersMap.NumbersWords;
+import com.genspark.NumbersMap.Magnitudes;
+import com.genspark.NumbersMap.SmallNumberWords;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -18,18 +20,12 @@ public class WesternNumbersToWords implements NumbersToWords {
     /**
      * numbersMap is the map of numbers to words.
      */
-    NumbersWords numbersWords;
+    SmallNumberWords smallNumberWords = new SmallNumberWords();
+    //    Magnitudes magnitudes = new ModernMagnitudes();
+    @Autowired
+    Magnitudes magnitudes;
 
     public WesternNumbersToWords() {
-    }
-
-    public WesternNumbersToWords(NumbersWords numbersWords) {
-        numberString = "";
-        this.numbersWords = numbersWords;
-    }
-
-    public void setNumbersMap(NumbersWords numbersWords) {
-        this.numbersWords = numbersWords;
     }
 
     /**
@@ -48,22 +44,22 @@ public class WesternNumbersToWords implements NumbersToWords {
             words += "negative ";
             number *= -1;
         }
-        if (numbersWords.getNumberMap().containsKey(number)) {
-            words += numbersWords.getNumberMap().get(number);
+        if (smallNumberWords.containsKey(number)) {
+            words += smallNumberWords.get(number);
         } else if (number < 100) {
-            words += numbersWords.getNumberMap().get(Math.floor(number / 10) * 10);
+            words += smallNumberWords.get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + numbersWords.getNumberMap().get(Math.floor(number) % 10);
+                words += "-" + smallNumberWords.get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersWords.getNumberMap().get(Math.floor(number / 100)) + " " + numbersWords.getMagnitudeWords().get(100D);
+            words += smallNumberWords.get(Math.floor(number / 100)) + " " + magnitudes.get(100D);
             if (number % 100 != 0) {
                 words += " and " + generateWordsForNumber(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
-            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + numbersWords.getMagnitudeWords().get(divisor);
+            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + magnitudes.get(divisor);
             if (number % divisor != 0) {
                 words += " " + generateWordsForNumber(number % divisor);
             }
@@ -84,7 +80,7 @@ public class WesternNumbersToWords implements NumbersToWords {
         String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
                 split("");
         for (String fractionChar : fractionChars) {
-            words.append(" ").append(numbersWords.getNumberMap().get(Double.parseDouble(fractionChar)));
+            words.append(" ").append(smallNumberWords.get(Double.parseDouble(fractionChar)));
         }
         return words.toString().strip();
     }
@@ -94,7 +90,6 @@ public class WesternNumbersToWords implements NumbersToWords {
      *
      * @return natural language interpretation the number in numberString.
      */
-    @Override
     public String getWords() {
         double number = Double.parseDouble(numberString.replaceAll("[ ,]", ""));
         double fraction = number - Math.floor(number);
@@ -105,14 +100,18 @@ public class WesternNumbersToWords implements NumbersToWords {
         }
     }
 
-    @Override
-    public String getNumberString() {
-        return numberString;
+    public void setNumberString(String numberString) {
+        this.numberString = numberString;
     }
 
     @Override
-    public void setNumberString(String numberString) {
-        this.numberString = numberString;
+    public Magnitudes getMagnitudes() {
+        return magnitudes;
+    }
+
+    @Override
+    public void setMagnitudes(Magnitudes magnitudes) {
+        this.magnitudes = magnitudes;
     }
 
 }

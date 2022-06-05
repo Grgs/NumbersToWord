@@ -2,8 +2,11 @@ package com.genspark.NumbersMap;
 
 import java.util.HashMap;
 
+/**
+ * Maps numbers to words.
+ */
 public class SmallNumberWords extends HashMap<Double, String> {
-    SmallNumberWords() {
+    public SmallNumberWords() {
         super();
         this.put(0D, "zero");
         this.put(1D, "one");

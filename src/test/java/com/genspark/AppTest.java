@@ -1,6 +1,10 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.ModernNumbersWords;
+import com.genspark.Converters.IndianNumbersToWords;
+import com.genspark.NumbersMap.IndianMagnitudes;
+import com.genspark.NumbersMap.LongScaleBritishMagnitudes;
+import com.genspark.NumbersMap.LongScaleEuropeanMagnitudes;
+import com.genspark.NumbersMap.ModernMagnitudes;
 import com.genspark.Converters.NumbersToWords;
 import com.genspark.Converters.WesternNumbersToWords;
 import org.junit.Test;
@@ -53,10 +57,23 @@ public class AppTest {
         numbers.add("823456789012099");
         numbers.add("8234567890120991");
         numbers.add("8234567890120991234456789012099");
-        NumbersToWords numbersToWords = new WesternNumbersToWords(new ModernNumbersWords());
+        NumbersToWords numbersToWords = new WesternNumbersToWords();
+        numbersToWords.setMagnitudes(new ModernMagnitudes());
+        NumbersToWords indianNumbersToWords = new IndianNumbersToWords();
+        indianNumbersToWords.setMagnitudes(new IndianMagnitudes());
+        NumbersToWords longScaleEuropean = new WesternNumbersToWords();
+        longScaleEuropean.setMagnitudes(new LongScaleEuropeanMagnitudes());
+        NumbersToWords longScaleBritish = new WesternNumbersToWords();
+        longScaleBritish.setMagnitudes(new LongScaleBritishMagnitudes());
         for (String number : numbers) {
             numbersToWords.setNumberString(number);
-            System.out.printf("%s is: %s%n", number, numbersToWords.getWords());
+            System.out.printf("Modern English      %s is: %s%n", number, numbersToWords.getWords());
+            indianNumbersToWords.setNumberString(number);
+            System.out.printf("Indian English      %s is: %s%n", number, indianNumbersToWords.getWords());
+            longScaleEuropean.setNumberString(number);
+            System.out.printf("Long Scale European %s is: %s%n", number, longScaleEuropean.getWords());
+            longScaleBritish.setNumberString(number);
+            System.out.printf("Long Scale British  %s is: %s%n", number, longScaleBritish.getWords());
         }
     }
 }

@@ -1,13 +1,14 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.ModernNumbersWords;
+import com.genspark.NumbersMap.ModernMagnitudes;
 import com.genspark.Converters.WesternNumbersToWords;
 import junit.framework.TestCase;
 
 public class WesternNumbersToWordsTest extends TestCase {
 
     public void testGetWords() {
-        WesternNumbersToWords westernNumbersToWords = new WesternNumbersToWords(new ModernNumbersWords());
+        WesternNumbersToWords westernNumbersToWords = new WesternNumbersToWords();
+        westernNumbersToWords.setMagnitudes(new ModernMagnitudes());
         westernNumbersToWords.setNumberString("-1");
         assertEquals("negative one", westernNumbersToWords.getWords());
         westernNumbersToWords.setNumberString("0");

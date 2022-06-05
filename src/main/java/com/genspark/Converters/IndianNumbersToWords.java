@@ -1,6 +1,5 @@
 package com.genspark.Converters;
 
-import com.genspark.NumbersMap.IndianNumbersWords;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,10 +7,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 //@Primary
-public class IndianNumbersToWords extends WesternNumbersToWords implements NumbersToWords {
-    public IndianNumbersToWords() {
-        super(new IndianNumbersWords());
-    }
+public class IndianNumbersToWords extends WesternNumbersToWords {
 
     @Override
     public String generateWordsForNumber(Double number) {
@@ -23,22 +19,22 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
             words += "negative ";
             number *= -1;
         }
-        if (numbersWords.getNumberMap().containsKey(number)) {
-            words += numbersWords.getNumberMap().get(number);
+        if (smallNumberWords.containsKey(number)) {
+            words += smallNumberWords.get(number);
         } else if (number < 100) {
-            words += numbersWords.getNumberMap().get(Math.floor(number / 10) * 10);
+            words += smallNumberWords.get(Math.floor(number / 10) * 10);
             if (number % 10 != 0) {
-                words += "-" + numbersWords.getNumberMap().get(Math.floor(number) % 10);
+                words += "-" + smallNumberWords.get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersWords.getNumberMap().get(Math.floor(number / 100)) + " " + numbersWords.getMagnitudeWords().get(100D);
+            words += smallNumberWords.get(Math.floor(number / 100)) + " " + magnitudes.get(100D);
             if (number % 100 != 0) {
                 words += " and " + generateWordsForNumber(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) - 1) / 2;
             double divisor = Math.pow(10, exponent * 2 + 1);
-            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + numbersWords.getMagnitudeWords().get(divisor);
+            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + magnitudes.get(divisor);
             if (number % divisor != 0) {
                 words += " " + generateWordsForNumber(number % divisor);
             }
