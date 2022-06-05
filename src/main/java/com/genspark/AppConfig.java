@@ -7,6 +7,9 @@ import com.genspark.NumbersToWords.WesternNumbersToWords;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Application configuration.
+ */
 @Configuration
 //@ComponentScan(basePackages = "com.genspark")
 public class AppConfig {

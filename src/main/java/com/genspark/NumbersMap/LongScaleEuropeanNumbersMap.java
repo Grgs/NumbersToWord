@@ -11,6 +11,10 @@ import java.util.HashMap;
  */
 @Component
 public class LongScaleEuropeanNumbersMap implements NumbersMap {
+    /**
+     * Names of orders of magnitude.
+     * i.e. "hundred", "thousand", "million", etc.
+     */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
     public LongScaleEuropeanNumbersMap() {

@@ -10,7 +10,10 @@ import java.util.HashMap;
  */
 @Component
 public class IndianNumbersMap implements NumbersMap {
-
+    /**
+     * Names of orders of magnitude.
+     * i.e. "hundred", "thousand", "lakh", etc.
+     */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
     public IndianNumbersMap() {

@@ -11,6 +11,10 @@ import java.util.HashMap;
 @Component
 @Primary
 public class ModernNumbersMap implements NumbersMap {
+    /**
+     * Names of orders of magnitude.
+     * i.e. "hundred", "thousand", "million", etc.
+     */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
     public ModernNumbersMap() {
