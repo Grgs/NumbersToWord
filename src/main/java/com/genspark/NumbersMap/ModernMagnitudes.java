@@ -5,13 +5,16 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 /**
- * Names of orders of magnitude.
+ * English names of orders of magnitude.
  * i.e. "hundred", "thousand", "million", etc.
  * <a href="https://en.wikipedia.org/wiki/Names_of_large_numbers#Extensions_of_the_standard_dictionary_numbers">
  * Dictionary numbers</a>
  */
 @Component
 public class ModernMagnitudes extends HashMap<Double, String> implements Magnitudes {
+    /**
+     * Add Magnitudes names.
+     */
     public ModernMagnitudes() {
         super();
         this.put(100D, "hundred");

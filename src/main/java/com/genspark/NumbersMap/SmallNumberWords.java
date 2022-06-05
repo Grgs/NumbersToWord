@@ -6,6 +6,9 @@ import java.util.HashMap;
  * Maps numbers to words.
  */
 public class SmallNumberWords extends HashMap<Double, String> {
+    /**
+     * Add number names.
+     */
     public SmallNumberWords() {
         super();
         this.put(0D, "zero");

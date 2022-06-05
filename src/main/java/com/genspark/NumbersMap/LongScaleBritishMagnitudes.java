@@ -12,6 +12,9 @@ import java.util.HashMap;
  */
 @Component
 public class LongScaleBritishMagnitudes extends HashMap<Double, String> implements Magnitudes {
+    /**
+     * Add Magnitudes names.
+     */
     public LongScaleBritishMagnitudes() {
         super();
         this.put(100D, "hundred");

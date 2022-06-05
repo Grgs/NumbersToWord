@@ -11,6 +11,9 @@ import java.util.HashMap;
  */
 @Component
 public class IndianMagnitudes extends HashMap<Double, String> implements Magnitudes {
+    /**
+     * Add Magnitudes names.
+     */
     public IndianMagnitudes() {
         super();
         this.put(100D, "hundred");

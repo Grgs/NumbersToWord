@@ -24,9 +24,6 @@ public class WesternNumbersToWords implements NumbersToWords {
     @Autowired
     Magnitudes magnitudes;
 
-    public WesternNumbersToWords() {
-    }
-
     /**
      * Generates the words describing the number.
      * example: 123 will return "one hundred and twenty-three"
