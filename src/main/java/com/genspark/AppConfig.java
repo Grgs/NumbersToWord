@@ -1,9 +1,9 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.ModernNumbersMap;
-import com.genspark.NumbersMap.NumbersMap;
-import com.genspark.NumbersToWords.NumbersToWords;
-import com.genspark.NumbersToWords.WesternNumbersToWords;
+import com.genspark.NumbersMap.ModernNumbersWords;
+import com.genspark.NumbersMap.NumbersWords;
+import com.genspark.Converters.NumbersToWords;
+import com.genspark.Converters.WesternNumbersToWords;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,9 +13,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 //@ComponentScan(basePackages = "com.genspark")
 public class AppConfig {
-    @Bean(name = "numbersMap")
-    public NumbersMap getNumbersMap() {
-        return new ModernNumbersMap();
+    @Bean(name = "numbersWords")
+    public NumbersWords getNumbersMap() {
+        return new ModernNumbersWords();
     }
 
     @Bean(name = "numbersToWords")

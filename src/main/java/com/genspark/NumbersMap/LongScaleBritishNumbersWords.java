@@ -10,14 +10,14 @@ import java.util.HashMap;
  * Dictionary numbers</a>
  */
 @Component
-public class LongScaleBritishNumbersMap implements NumbersMap {
+public class LongScaleBritishNumbersWords implements NumbersWords {
     /**
      * Names of orders of magnitude.
      * i.e. "hundred", "thousand", "million", etc.
      */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
-    public LongScaleBritishNumbersMap() {
+    public LongScaleBritishNumbersWords() {
         this.magnitudeWords.put(100D, "hundred");
         this.magnitudeWords.put(1000D, "thousand");
         this.magnitudeWords.put(Math.pow(10, 6), "million");

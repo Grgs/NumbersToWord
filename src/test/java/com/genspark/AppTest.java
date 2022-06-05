@@ -1,8 +1,8 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.ModernNumbersMap;
-import com.genspark.NumbersToWords.NumbersToWords;
-import com.genspark.NumbersToWords.WesternNumbersToWords;
+import com.genspark.NumbersMap.ModernNumbersWords;
+import com.genspark.Converters.NumbersToWords;
+import com.genspark.Converters.WesternNumbersToWords;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class AppTest {
         numbers.add("823456789012099");
         numbers.add("8234567890120991");
         numbers.add("8234567890120991234456789012099");
-        NumbersToWords numbersToWords = new WesternNumbersToWords(new ModernNumbersMap());
+        NumbersToWords numbersToWords = new WesternNumbersToWords(new ModernNumbersWords());
         for (String number : numbers) {
             numbersToWords.setNumberString(number);
             System.out.printf("%s is: %s%n", number, numbersToWords.getWords());

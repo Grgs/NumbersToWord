@@ -10,14 +10,14 @@ import java.util.HashMap;
  */
 @Component
 @Primary
-public class ModernNumbersMap implements NumbersMap {
+public class ModernNumbersWords implements NumbersWords {
     /**
      * Names of orders of magnitude.
      * i.e. "hundred", "thousand", "million", etc.
      */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
-    public ModernNumbersMap() {
+    public ModernNumbersWords() {
         magnitudeWords.put(100D, "hundred");
         magnitudeWords.put(1000D, "thousand");
         magnitudeWords.put(Math.pow(10, 6), "million");

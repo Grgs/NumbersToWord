@@ -9,14 +9,14 @@ import java.util.HashMap;
  * <a href="https://en.wikipedia.org/wiki/Indian_numbering_system#Names_of_numbers">Indian English names of numbers</a>
  */
 @Component
-public class IndianNumbersMap implements NumbersMap {
+public class IndianNumbersWords implements NumbersWords {
     /**
      * Names of orders of magnitude.
      * i.e. "hundred", "thousand", "lakh", etc.
      */
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
-    public IndianNumbersMap() {
+    public IndianNumbersWords() {
         this.magnitudeWords.put(100D, "hundred");
         this.magnitudeWords.put(1000D, "thousand");
         this.magnitudeWords.put(Math.pow(10, 5), "lakh");

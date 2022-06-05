@@ -1,6 +1,6 @@
-package com.genspark.NumbersToWords;
+package com.genspark.Converters;
 
-import com.genspark.NumbersMap.NumbersMap;
+import com.genspark.NumbersMap.NumbersWords;
 
 /**
  * Converts numbers to words.
@@ -15,6 +15,6 @@ public interface NumbersToWords {
 
     void setNumberString(String numberString);
 
-    void setNumbersMap(NumbersMap numbersMap);
+    void setNumbersMap(NumbersWords numbersWords);
 
 }

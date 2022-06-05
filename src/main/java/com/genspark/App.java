@@ -1,11 +1,11 @@
 package com.genspark;
 
-import com.genspark.NumbersMap.LongScaleBritishNumbersMap;
-import com.genspark.NumbersMap.LongScaleEuropeanNumbersMap;
-import com.genspark.NumbersMap.ModernNumbersMap;
-import com.genspark.NumbersToWords.IndianNumbersToWords;
-import com.genspark.NumbersToWords.NumbersToWords;
-import com.genspark.NumbersToWords.WesternNumbersToWords;
+import com.genspark.NumbersMap.LongScaleBritishNumbersWords;
+import com.genspark.NumbersMap.LongScaleEuropeanNumbersWords;
+import com.genspark.NumbersMap.ModernNumbersWords;
+import com.genspark.Converters.IndianNumbersToWords;
+import com.genspark.Converters.NumbersToWords;
+import com.genspark.Converters.WesternNumbersToWords;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
@@ -27,15 +27,15 @@ public class App {
         String number = scanner.nextLine();
         numbersToWords.setNumberString(number);
         System.out.printf("For current configuration %s is: %s%n", number, numbersToWords.getWords());
-        WesternNumbersToWords westernNumbersToWords = new WesternNumbersToWords(new ModernNumbersMap());
+        WesternNumbersToWords westernNumbersToWords = new WesternNumbersToWords(new ModernNumbersWords());
         westernNumbersToWords.setNumberString(number);
         IndianNumbersToWords indianNumbersToWords = new IndianNumbersToWords();
         indianNumbersToWords.setNumberString(number);
         WesternNumbersToWords traditionalLongScaleEuropean =
-                new WesternNumbersToWords(new LongScaleEuropeanNumbersMap());
+                new WesternNumbersToWords(new LongScaleEuropeanNumbersWords());
         traditionalLongScaleEuropean.setNumberString(number);
         WesternNumbersToWords traditionalLongScaleBritish =
-                new WesternNumbersToWords(new LongScaleBritishNumbersMap());
+                new WesternNumbersToWords(new LongScaleBritishNumbersWords());
         traditionalLongScaleBritish.setNumberString(number);
         System.out.printf("   Western Modern number system: %s%n" +
                         "   Indian English number system: %s%n" +

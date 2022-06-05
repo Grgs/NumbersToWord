@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Maps numbers to words.
  */
-public interface NumbersMap {
+public interface NumbersWords {
 
     HashMap<Double, String> numberWords = new SmallNumberWords();
 
