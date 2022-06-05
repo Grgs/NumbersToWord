@@ -11,21 +11,21 @@ import java.util.HashMap;
 @Component
 public class IndianNumbersMap implements NumbersMap {
 
-    final public HashMap<Double, String> tensMap = new HashMap<>();
+    final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
     public IndianNumbersMap() {
-        this.tensMap.put(100D, "hundred");
-        this.tensMap.put(1000D, "thousand");
-        this.tensMap.put(Math.pow(10, 5), "lakh");
-        this.tensMap.put(Math.pow(10, 7), "crore");
-        this.tensMap.put(Math.pow(10, 9), "arab");
-        this.tensMap.put(Math.pow(10, 11), "kharab");
-        this.tensMap.put(Math.pow(10, 13), "nil");
-        this.tensMap.put(Math.pow(10, 15), "padma");
-        this.tensMap.put(Math.pow(10, 17), "shankh");
+        this.magnitudeWords.put(100D, "hundred");
+        this.magnitudeWords.put(1000D, "thousand");
+        this.magnitudeWords.put(Math.pow(10, 5), "lakh");
+        this.magnitudeWords.put(Math.pow(10, 7), "crore");
+        this.magnitudeWords.put(Math.pow(10, 9), "arab");
+        this.magnitudeWords.put(Math.pow(10, 11), "kharab");
+        this.magnitudeWords.put(Math.pow(10, 13), "nil");
+        this.magnitudeWords.put(Math.pow(10, 15), "padma");
+        this.magnitudeWords.put(Math.pow(10, 17), "shankh");
     }
 
-    public HashMap<Double, String> getTensMap() {
-        return tensMap;
+    public HashMap<Double, String> getMagnitudeWords() {
+        return magnitudeWords;
     }
 }

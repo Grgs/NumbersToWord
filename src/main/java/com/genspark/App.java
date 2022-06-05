@@ -6,7 +6,6 @@ import com.genspark.NumbersMap.TraditionalLongScaleEuropeanNumbersMap;
 import com.genspark.NumbersToWords.IndianNumbersToWords;
 import com.genspark.NumbersToWords.NumbersToWords;
 import com.genspark.NumbersToWords.WesternNumbersToWords;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
@@ -14,6 +13,8 @@ import java.util.Scanner;
 
 /**
  * An app for converting numbers to words.
+ *
+ * @author Michael Guirguis
  */
 public class App {
 
@@ -46,6 +47,11 @@ public class App {
                 traditionalLongScaleBritish.getWords());
     }
 
+    /**
+     * Get input from user and run the app.
+     *
+     * @param args unused
+     */
     public static void main(String[] args) {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         NumbersToWords numbersToWords = context.getBean(NumbersToWords.class);

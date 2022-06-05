@@ -14,7 +14,7 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
     }
 
     @Override
-    public String getWords(Double number) {
+    public String generateWordsForNumber(Double number) {
         String words = "";
         if (numberString.length() == 0) {
             return words;
@@ -31,16 +31,16 @@ public class IndianNumbersToWords extends WesternNumbersToWords implements Numbe
                 words += "-" + numbersMap.getNumberMap().get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getTensMap().get(100D);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getMagnitudeWords().get(100D);
             if (number % 100 != 0) {
-                words += " and " + getWords(number % 100);
+                words += " and " + generateWordsForNumber(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) - 1) / 2;
             double divisor = Math.pow(10, exponent * 2 + 1);
-            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.getTensMap().get(divisor);
+            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + numbersMap.getMagnitudeWords().get(divisor);
             if (number % divisor != 0) {
-                words += " " + getWords(number % divisor);
+                words += " " + generateWordsForNumber(number % divisor);
             }
         }
         return words;

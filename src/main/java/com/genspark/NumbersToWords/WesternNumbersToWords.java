@@ -33,10 +33,13 @@ public class WesternNumbersToWords implements NumbersToWords {
     }
 
     /**
+     * Generates the words describing the number.
+     * example: 123 will return "one hundred and twenty-three"
+     *
      * @param number number to be converted to words.
      * @return natural language interpretation of the number.
      */
-    public String getWords(Double number) {
+    public String generateWordsForNumber(Double number) {
         String words = "";
         if (numberString.length() == 0) {
             return words;
@@ -53,22 +56,29 @@ public class WesternNumbersToWords implements NumbersToWords {
                 words += "-" + numbersMap.getNumberMap().get(Math.floor(number) % 10);
             }
         } else if (number < 1000) {
-            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getTensMap().get(100D);
+            words += numbersMap.getNumberMap().get(Math.floor(number / 100)) + " " + numbersMap.getMagnitudeWords().get(100D);
             if (number % 100 != 0) {
-                words += " and " + getWords(number % 100);
+                words += " and " + generateWordsForNumber(number % 100);
             }
         } else {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
-            words += getWords(Math.floor(number / divisor)) + " " + numbersMap.getTensMap().get(divisor);
+            words += generateWordsForNumber(Math.floor(number / divisor)) + " " + numbersMap.getMagnitudeWords().get(divisor);
             if (number % divisor != 0) {
-                words += " " + getWords(number % divisor);
+                words += " " + generateWordsForNumber(number % divisor);
             }
         }
         return words;
     }
 
-    private String getWordsFraction(double fraction) {
+    /**
+     * Generates the words describing the fraction.
+     * example: 0.123 will return "one two three"
+     *
+     * @param fraction number with a fraction to be converted to words.
+     * @return natural language interpretation of the fraction.
+     */
+    private String generateWordsForFraction(double fraction) {
         StringBuilder words = new StringBuilder();
         String fractionString = String.format("%f", fraction);
         String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
@@ -80,6 +90,8 @@ public class WesternNumbersToWords implements NumbersToWords {
     }
 
     /**
+     * Converts the number to words.
+     *
      * @return natural language interpretation the number in numberString.
      */
     @Override
@@ -87,9 +99,9 @@ public class WesternNumbersToWords implements NumbersToWords {
         double number = Double.parseDouble(numberString.replaceAll("[ ,]", ""));
         double fraction = number - Math.floor(number);
         if (fraction != 0) {
-            return getWords(Math.floor(number)) + " point " + getWordsFraction(fraction);
+            return generateWordsForNumber(Math.floor(number)) + " point " + generateWordsForFraction(fraction);
         } else {
-            return getWords(number);
+            return generateWordsForNumber(number);
         }
     }
 

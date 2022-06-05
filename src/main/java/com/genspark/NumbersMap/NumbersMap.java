@@ -8,12 +8,12 @@ import java.util.HashMap;
 public interface NumbersMap {
 
     HashMap<Double, String> numberMap = new NumberMap().getNumberMap();
-    HashMap<Double, String> tensMap = new HashMap<>();
+    HashMap<Double, String> magnitudeWords = new HashMap<>();
 
     default HashMap<Double, String> getNumberMap() {
         return numberMap;
     }
 
-    HashMap<Double, String> getTensMap();
+    HashMap<Double, String> getMagnitudeWords();
 
 }
