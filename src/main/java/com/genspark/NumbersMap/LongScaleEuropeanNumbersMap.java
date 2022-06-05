@@ -10,10 +10,10 @@ import java.util.HashMap;
  * Dictionary numbers</a>
  */
 @Component
-public class TraditionalLongScaleEuropeanNumbersMap implements NumbersMap {
+public class LongScaleEuropeanNumbersMap implements NumbersMap {
     final public HashMap<Double, String> magnitudeWords = new HashMap<>();
 
-    public TraditionalLongScaleEuropeanNumbersMap() {
+    public LongScaleEuropeanNumbersMap() {
         this.magnitudeWords.put(100D, "hundred");
         this.magnitudeWords.put(1000D, "thousand");
         this.magnitudeWords.put(Math.pow(10, 6), "million");

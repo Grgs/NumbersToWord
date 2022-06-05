@@ -1,8 +1,8 @@
 package com.genspark;
 
+import com.genspark.NumbersMap.LongScaleBritishNumbersMap;
+import com.genspark.NumbersMap.LongScaleEuropeanNumbersMap;
 import com.genspark.NumbersMap.ModernNumbersMap;
-import com.genspark.NumbersMap.TraditionalLongScaleBritishNumbersMap;
-import com.genspark.NumbersMap.TraditionalLongScaleEuropeanNumbersMap;
 import com.genspark.NumbersToWords.IndianNumbersToWords;
 import com.genspark.NumbersToWords.NumbersToWords;
 import com.genspark.NumbersToWords.WesternNumbersToWords;
@@ -32,10 +32,10 @@ public class App {
         IndianNumbersToWords indianNumbersToWords = new IndianNumbersToWords();
         indianNumbersToWords.setNumberString(number);
         WesternNumbersToWords traditionalLongScaleEuropean =
-                new WesternNumbersToWords(new TraditionalLongScaleEuropeanNumbersMap());
+                new WesternNumbersToWords(new LongScaleEuropeanNumbersMap());
         traditionalLongScaleEuropean.setNumberString(number);
         WesternNumbersToWords traditionalLongScaleBritish =
-                new WesternNumbersToWords(new TraditionalLongScaleBritishNumbersMap());
+                new WesternNumbersToWords(new LongScaleBritishNumbersMap());
         traditionalLongScaleBritish.setNumberString(number);
         System.out.printf("   Western Modern number system: %s%n" +
                         "   Indian English number system: %s%n" +

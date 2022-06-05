@@ -7,11 +7,10 @@ import java.util.HashMap;
  */
 public interface NumbersMap {
 
-    HashMap<Double, String> numberMap = new NumberMap().getNumberMap();
-    HashMap<Double, String> magnitudeWords = new HashMap<>();
+    HashMap<Double, String> numberWords = new SmallNumberWords();
 
     default HashMap<Double, String> getNumberMap() {
-        return numberMap;
+        return numberWords;
     }
 
     HashMap<Double, String> getMagnitudeWords();
