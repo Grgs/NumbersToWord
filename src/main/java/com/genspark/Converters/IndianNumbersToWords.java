@@ -31,10 +31,17 @@ public class IndianNumbersToWords extends WesternNumbersToWords {
             if (number % 100 != 0) {
                 words += " and " + generateWordsForNumber(number % 100);
             }
-        } else {
+        } else if (number < magnitudes.getMaxMagnitude() * 100) {
             int exponent = (int) Math.floor(Math.log10(number) - 1) / 2;
             double divisor = Math.pow(10, exponent * 2 + 1);
             words += generateWordsForNumber(Math.floor(number / divisor)) + " " + magnitudes.get(divisor);
+            if (number % divisor != 0) {
+                words += " " + generateWordsForNumber(number % divisor);
+            }
+        } else {
+            double divisor = magnitudes.getMaxMagnitude();
+            words += String.format("(%s) %s", generateWordsForNumber(Math.floor(number / divisor)),
+                    magnitudes.get(divisor));
             if (number % divisor != 0) {
                 words += " " + generateWordsForNumber(number % divisor);
             }

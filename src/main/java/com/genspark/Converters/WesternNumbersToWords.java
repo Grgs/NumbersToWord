@@ -52,10 +52,17 @@ public class WesternNumbersToWords implements NumbersToWords {
             if (number % 100 != 0) {
                 words += " and " + generateWordsForNumber(number % 100);
             }
-        } else {
+        } else if (number < (magnitudes.getMaxMagnitude() * 1000)) {
             int exponent = (int) Math.floor(Math.log10(number) / 3);
             double divisor = Math.pow(10, exponent * 3);
             words += generateWordsForNumber(Math.floor(number / divisor)) + " " + magnitudes.get(divisor);
+            if (number % divisor != 0) {
+                words += " " + generateWordsForNumber(number % divisor);
+            }
+        } else {
+            double divisor = magnitudes.getMaxMagnitude();
+            words += String.format("(%s) %s", generateWordsForNumber(Math.floor(number / divisor)),
+                    magnitudes.get(divisor));
             if (number % divisor != 0) {
                 words += " " + generateWordsForNumber(number % divisor);
             }
@@ -65,18 +72,20 @@ public class WesternNumbersToWords implements NumbersToWords {
 
     /**
      * Generates the words describing the fraction.
-     * example: 0.123 will return "one two three"
+     * example: 12.345 will return "three four five"
      *
      * @param fraction number with a fraction to be converted to words.
      * @return natural language interpretation of the fraction.
      */
-    private String generateWordsForFraction(double fraction) {
+    private String generateWordsForFraction(String fraction) {
+        String fractionPart = fraction.split("\\.")[1].replaceFirst("0*$", "");
+        return " point " + generateWordsOnly(fractionPart);
+    }
+
+    private String generateWordsOnly(String numberString) {
         StringBuilder words = new StringBuilder();
-        String fractionString = String.format("%f", fraction);
-        String[] fractionChars = fractionString.split("\\.")[1].replaceFirst("0*$", "").
-                split("");
-        for (String fractionChar : fractionChars) {
-            words.append(" ").append(smallNumberWords.get(Double.parseDouble(fractionChar)));
+        for (String numberChar : numberString.split("")) {
+            words.append(" ").append(smallNumberWords.get(Double.parseDouble(numberChar)));
         }
         return words.toString().strip();
     }
@@ -90,7 +99,7 @@ public class WesternNumbersToWords implements NumbersToWords {
         double number = Double.parseDouble(numberString.replaceAll("[ ,]", ""));
         double fraction = number - Math.floor(number);
         if (fraction != 0) {
-            return generateWordsForNumber(Math.floor(number)) + " point " + generateWordsForFraction(fraction);
+            return generateWordsForNumber(Math.floor(number)) + generateWordsForFraction(numberString);
         } else {
             return generateWordsForNumber(number);
         }
